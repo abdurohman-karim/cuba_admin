@@ -22,7 +22,6 @@ Route::group(['middleware'=>"auth"],function (){
     Route::resource('users', App\Http\Controllers\Blade\UserController::class);
     Route::resource('roles', App\Http\Controllers\Blade\RoleController::class);
     Route::get('permissions', [App\Http\Controllers\Blade\PermissionController::class,'index'])->name('permissions.index');
-
 });
 
 //Language Change

@@ -36,6 +36,7 @@
                                     <th scope="col">ID</th>
                                     <th scope="col">Имя</th>
                                     <th scope="col">Email</th>
+                                    <th scope="col">Роли</th>
                                     <th scope="col">Действия</th>
                                 </tr>
                             </thead>
@@ -45,6 +46,11 @@
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>
+                                        @foreach ($user->roles as $role)
+                                            <span class="badge badge-light-success">{{ $role->name }}</span>
+                                        @endforeach
+                                    </td>
                                     <td>
                                         <div class="btn-group-sm">
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success btn-sm">

@@ -56,8 +56,8 @@
                         </a>
                         <ul class="sidebar-submenu">
                             <li><a href="{{ route('users.index') }}">Пользователи</a></li>
-                            <li><a href="{{ route('dashboard-02') }}">Роли</a></li>
-                            <li><a href="{{ route('dashboard-03') }}">Разрешения</a></li>
+                            <li><a href="{{ route('roles.index') }}">Роли</a></li>
+                            <li><a href="{{ route('permissions.index') }}">Разрешения</a></li>
                         </ul>
                     </li>
                 </ul>
