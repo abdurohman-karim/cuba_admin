@@ -142,7 +142,6 @@
               <li class="total">
                 <h6 class="mb-0">Order Total : <span class="f-right">$1000.00</span></h6>
               </li>
-              <li class="text-center"><a class="d-block mb-3 view-cart f-w-700" href="{{ route('cart')}}">Go to your cart</a><a class="btn btn-primary view-checkout" href="{{ route('checkout')}}">Checkout</a></li>
             </ul>
           </div>
         </li>
