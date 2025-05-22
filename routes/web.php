@@ -9,6 +9,8 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::group(['middleware'=>"auth"],function (){
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     Route::prefix('dashboard')->group(function () {
         Route::view('index', 'dashboard.index')->name('index');
         Route::view('dashboard-02', 'dashboard.dashboard-02')->name('dashboard-02');
@@ -16,6 +18,11 @@ Route::group(['middleware'=>"auth"],function (){
         Route::view('dashboard-04', 'dashboard.dashboard-04')->name('dashboard-04');
         Route::view('dashboard-05', 'dashboard.dashboard-05')->name('dashboard-05');
     });
+
+    Route::resource('users', App\Http\Controllers\Blade\UserController::class);
+    Route::resource('roles', App\Http\Controllers\Blade\RoleController::class);
+    Route::get('permissions', [App\Http\Controllers\Blade\PermissionController::class,'index'])->name('permissions.index');
+
 });
 
 //Language Change
@@ -27,7 +34,3 @@ Route::get('lang/{locale}', function ($locale) {
     Session::get('locale');
     return redirect()->back();
 })->name('lang');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

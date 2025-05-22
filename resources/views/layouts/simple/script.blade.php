@@ -18,10 +18,37 @@
 <script src="{{ asset('assets/js/slick/slick.min.js') }}"></script>
 <script src="{{ asset('assets/js/slick/slick.js') }}"></script>
 <script src="{{ asset('assets/js/header-slick.js') }}"></script>
+<script src="{{ asset('assets/js/toastr/toastr.min.js')}}"></script>
+<script src="{{ asset('assets/js/pages/toastr.init.js')}}"></script>
+<script src="{{ asset('assets/myScripts.js')}}"></script>
 @yield('script')
 
 @if(Route::current()->getName() != 'popover') 
 	<script src="{{asset('assets/js/tooltip-init.js')}}"></script>
+@endif
+
+@if(session('_message'))
+ <script>
+     toastr.options = {
+         "closeButton": true,
+         "debug": false,
+         "newestOnTop": true,
+         "progressBar": true,
+         "positionClass": "toast-top-right",
+         "preventDuplicates": false,
+         "onclick": null,
+         "showDuration": 300,
+         "hideDuration": 1000,
+         "timeOut": 5000,
+         "extendedTimeOut": 1000,
+         "showEasing": "swing",
+         "hideEasing": "linear",
+         "showMethod": "fadeIn",
+         "hideMethod": "fadeOut"
+     }
+     Command: toastr['{{ session('_type') ?? 'info'}}']('{{session('_message')}}', '{{ session('_description') ?? ' ' }}')
+ </script>
+ @php(message_clear())
 @endif
 
 <!-- Plugins JS Ends-->

@@ -70,9 +70,9 @@
           </div>
         </li>
         <li class="profile-nav onhover-dropdown pe-0 py-0">
-          <div class="media profile-media"><img class="b-r-10" src="{{ asset('assets/images/dashboard/profile.png') }}" alt="">
-            <div class="media-body"><span>Emay Walter</span>
-              <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
+          <div class="media profile-media">
+            <div class="media-body"><span>{{ Auth::user()->name }}</span>
+              <p class="mb-0 font-roboto"> {{ Auth::user()->email }} <i class="middle fa fa-angle-down"></i></p>
             </div>
           </div>
           <ul class="profile-dropdown onhover-show-div">
@@ -81,9 +81,10 @@
             <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
             <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
             <li>
-              <a href="{{ route('logout') }}"
+              <a href="{{ route('logout') }}" class="text-danger"
                  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+                <i class=" fa fa-sign-out"></i>
                 {{ __('Logout') }}
               </a>
 

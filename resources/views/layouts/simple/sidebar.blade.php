@@ -24,24 +24,40 @@
                     </li>
                     <li class="sidebar-main-title">
                         <div>
-                            <h6 class="lan-1">General</h6>
+                            <h6>Генеральная</h6>
                         </div>
                     </li>
-                    <li class="sidebar-list"><i class="fa fa-thumb-tack"></i>
-                        <label class="badge badge-light-primary">5</label><a class="sidebar-link sidebar-title"
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title"
                             href="#">
                             <svg class="stroke-icon">
-                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-home') }}"></use>
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-widget') }}"></use>
                             </svg>
                             <svg class="fill-icon">
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#fill-home') }}"></use>
-                            </svg><span class="lan-3">Dashboard</span></a>
+                            </svg><span>Меню</span></a>
                         <ul class="sidebar-submenu">
-                            <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
-                            <li><a class="lan-5" href="{{ route('dashboard-02') }}">Ecommerce</a></li>
+                            <li><a href="{{ route('index') }}">Default</a></li>
+                            <li><a href="{{ route('dashboard-02') }}">Ecommerce</a></li>
                             <li><a href="{{ route('dashboard-03') }}">Online course</a></li>
                             <li><a href="{{ route('dashboard-04') }}">Crypto</a></li>
                             <li><a href="{{ route('dashboard-05') }}">Social</a></li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-list">
+                        <a class="sidebar-link sidebar-title" href="#">
+                            <svg class="stroke-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#stroke-user') }}"></use>
+                            </svg>
+                            <svg class="fill-icon">
+                                <use href="{{ asset('assets/svg/icon-sprite.svg#fill-user') }}"></use>
+                            </svg>
+                            <span >Контроль доступа</span>
+                        </a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="{{ route('users.index') }}">Пользователи</a></li>
+                            <li><a href="{{ route('dashboard-02') }}">Роли</a></li>
+                            <li><a href="{{ route('dashboard-03') }}">Разрешения</a></li>
                         </ul>
                     </li>
                 </ul>
