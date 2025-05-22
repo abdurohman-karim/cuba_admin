@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Blade;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\Permission;
+use App\Services\Check;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -42,8 +43,19 @@ class RoleController extends Controller
         return redirect()->route('roles.index');
     }
 
+    public function edit($id)
+    {
+        Check::permission('Редактировать роли');
+
+        $role = Role::with('permissions')->where('id', $id)->first();
+        $permissions = Permission::all();
+        return view('pages.role.edit', compact('role', 'permissions'));
+    }
+
     public function destroy($id)
     {
+        Check::permission('Удаление роли');
+
         $role = Role::where('id', $id)
             ->where('id', '!=', auth()->user()->id)
             ->first();

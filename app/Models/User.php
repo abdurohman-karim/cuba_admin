@@ -69,8 +69,9 @@ class User extends Authenticatable
     }
 
 
-    public function assignRole(Role $role)
+    public function assignRole($role)
     {
+        $role = Role::where('name', $role)->firstOrFail();
         $this->roles()->syncWithoutDetaching($role->id);
         $this->clearPermissionsCache();
     }
