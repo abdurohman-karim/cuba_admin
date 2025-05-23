@@ -52,6 +52,43 @@ class RoleController extends Controller
         return view('pages.role.edit', compact('role', 'permissions'));
     }
 
+    public function update(Request $request, $id)
+    {
+        Check::permission('Редактировать роли');
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        $role = Role::where('id', $id)
+            ->where('id', '!=', auth()->user()->id)
+            ->first();
+
+        if (!$role) {
+            message_set('Роль не найдена', 'error');
+            return redirect()->route('roles.index');
+        }
+
+        if ($role->name === 'Super Admin') {
+            message_set('Нельзя редактировать роль Super Admin', 'error');
+            return redirect()->route('roles.index');
+        }
+
+        $role->update([
+            'name' => $request->name,
+        ]);
+
+        if ($request->has('permissions')) {
+            $role->permissions()->detach();
+            foreach ($request->permissions as $item) {
+                $role->givePermissionTo($item);
+            }
+        }
+
+        message_set('Роль обновлена успешно', 'success');
+        return redirect()->route('roles.index');
+    }
+
     public function destroy($id)
     {
         Check::permission('Удаление роли');

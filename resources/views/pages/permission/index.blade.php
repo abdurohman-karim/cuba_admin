@@ -36,10 +36,10 @@
                             <tbody>
                                 @foreach ($permissions as $permission)
                                 <tr>
-                                    <td class="col-sm-2">
+                                    <td>
                                         {{ $permission->id }}
                                     </td>
-                                    <td class="col-sm-2">
+                                    <td>
                                         {{ $permission->name }}
                                     </td>
                                 </tr>

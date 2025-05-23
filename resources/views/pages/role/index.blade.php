@@ -42,26 +42,29 @@
                             <tbody>
                                 @foreach($roles as $role)
                                     <tr>
-                                        <td class="col-sm-2">
+                                        <td>
                                             {{ $role->id }}
                                         </td>
-                                        <td class="col-sm-2">
+                                        <td>
                                             {{ $role->name }}
                                         </td>
-                                        <td class="col-sm-2">
-                                            {{$role->permissions->pluck('name')->implode(', ')}}
+                                        <td>
+                                            @foreach($role->permissions as $permission)
+                                                <span class="badge badge-light-success me-1">{{ $permission->name }}</span>
+                                            @endforeach
                                         </td>
                                         <td>
                                             <div class="btn-group-sm">
                                                 <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-success btn-sm">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a href="{{ route('roles.destroy', $role->id) }}" onclick="event.preventDefault();
-                                               document.getElementById('delete-form').submit();" class="btn btn-danger btn-sm">
+                                                <a href="{{ route('roles.destroy', $role->id) }}"
+                                                   onclick="event.preventDefault(); document.getElementById('delete-form-{{ $role->id }}').submit();"
+                                                   class="btn btn-danger btn-sm">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
                                             </div>
-                                            <form id="delete-form" action="{{ route('roles.destroy', $role->id) }}" method="POST" class="d-none">
+                                            <form id="delete-form-{{ $role->id }}" action="{{ route('roles.destroy', $role->id) }}" method="POST" class="d-none">
                                                 @csrf
                                                 @method('DELETE')
                                             </form>

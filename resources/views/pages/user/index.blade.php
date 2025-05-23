@@ -58,10 +58,10 @@
                                             </a>
                                             @if(auth()->user()->id != $user->id)
                                                 <a href="{{ route('users.destroy', $user->id) }}" onclick="event.preventDefault();
-                                               document.getElementById('delete-form').submit();" class="btn btn-danger btn-sm">
+                                               document.getElementById('delete-form-{{ $user->id }}').submit();" class="btn btn-danger btn-sm">
                                                     <i class="fa fa-trash"></i>
                                                 </a>
-                                                <form id="delete-form" action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-none">
+                                                <form id="delete-form-{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" class="d-none">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>

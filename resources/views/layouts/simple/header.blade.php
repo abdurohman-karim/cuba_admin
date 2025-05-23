@@ -4,7 +4,7 @@
       <div class="form-group w-100">
         <div class="Typeahead Typeahead--twitterUsers">
           <div class="u-posRelative">
-            <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search Cuba .." name="q" title="" autofocus>
+            <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Поиск ..." name="q" title="" autofocus>
             <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div><i class="close-search" data-feather="x"></i>
           </div>
           <div class="Typeahead-menu"></div>
@@ -76,16 +76,14 @@
             </div>
           </div>
           <ul class="profile-dropdown onhover-show-div">
-            <li><a href="#"><i data-feather="user"></i><span>Account </span></a></li>
-            <li><a href="#"><i data-feather="mail"></i><span>Inbox</span></a></li>
-            <li><a href="#"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-            <li><a href="#"><i data-feather="settings"></i><span>Settings</span></a></li>
+            <li><a href="{{ route('profile') }}"><i data-feather="user"></i><span>Профиль </span></a></li>
+            <li><a href="#"><i data-feather="settings"></i><span>Настройки</span></a></li>
             <li>
               <a href="{{ route('logout') }}" class="text-danger"
                  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 <i class=" fa fa-sign-out"></i>
-                {{ __('Logout') }}
+                {{ __('Выход') }}
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

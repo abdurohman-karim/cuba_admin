@@ -64,9 +64,6 @@
           @yield('content')
           <!-- Container-fluid Ends-->
         </div>
-        <!-- footer start-->
-        @include('layouts.simple.footer') 
-        
       </div>
     </div>
     <!-- latest jquery-->
