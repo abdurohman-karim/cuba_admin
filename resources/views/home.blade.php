@@ -1,5 +1,7 @@
 @extends('layouts.simple.master')
 
+@section('title', 'Основная страница')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
