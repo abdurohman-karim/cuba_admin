@@ -25,7 +25,7 @@
 							<div class="according-menu"><i class="fa fa-angle-{{request()->route()->getPrefix() == '/dashboard' ? 'down' : 'right' }}"></i></div>
 						</a>
 						<ul class="sidebar-submenu" style="display: {{ request()->route()->getPrefix() == '/dashboard' ? 'block;' : 'none;' }}">
-							<li><a class="lan-4 {{ Route::currentRouteName()=='index' ? 'active' : '' }}" href="{{route('index')}}">{{ trans('lang.Default') }}</a></li>
+							<li><a class="lan-4 {{ Route::currentRouteName()=='home' ? 'active' : '' }}" href="{{route('home')}}">{{ trans('lang.Default') }}</a></li>
                      		<li><a class="lan-5 {{ Route::currentRouteName()=='dashboard-02' ? 'active' : '' }}" href="{{route('dashboard-02')}}">{{ trans('lang.Ecommerce') }}</a></li>
 						</ul>
 					</li>
@@ -41,13 +41,13 @@
 					<li class="sidebar-list">
 						<a class="sidebar-link sidebar-title" href="#"><i data-feather="layout"></i><span class="lan-7">Page layout</span></a>
 						<ul class="sidebar-submenu" >
-							<li class=" customizer-color"><a href="{{route('index')}}">Boxed</a></li>
-							<li class=" customizer-color"><a href="{{route('index')}}">RTL</a></li>
-							<li class=" customizer-color dark"><a href="{{route('index')}}">Dark Layout</a></li>
-							<li class=" customizer-color"><a href="{{route('index')}}">Hide Nav Scroll</a></li>
-							<li class=" customizer-color"><a href="{{route('index')}}">Footer Light</a></li>
-							<li class=" customizer-color"><a href="{{route('index')}}">Footer Dark</a></li>
-							<li class=" customizer-color"><a href="{{route('index')}}">Footer Fixed</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">Boxed</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">RTL</a></li>
+							<li class=" customizer-color dark"><a href="{{route('home')}}">Dark Layout</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">Hide Nav Scroll</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">Footer Light</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">Footer Dark</a></li>
+							<li class=" customizer-color"><a href="{{route('home')}}">Footer Fixed</a></li>
 						</ul>
 					</li>
 					<li class="sidebar-main-title">

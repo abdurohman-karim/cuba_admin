@@ -1,18 +1,18 @@
 <div class="sidebar-wrapper" sidebar-layout="stroke-svg">
     <div>
-        <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid for-light"
+        <div class="logo-wrapper"><a href="{{ route('home') }}"><img class="img-fluid for-light"
                     src="{{ asset('assets/images/logo/logo.png') }}" alt=""><img class="img-fluid for-dark"
                     src="{{ asset('assets/images/logo/logo_dark.png') }}" alt=""></a>
             <div class="back-btn"><i class="fa fa-angle-left"></i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
         </div>
-        <div class="logo-icon-wrapper"><a href="{{ route('index') }}"><img class="img-fluid"
+        <div class="logo-icon-wrapper"><a href="{{ route('home') }}"><img class="img-fluid"
                     src="{{ asset('assets/images/logo/logo-icon.png') }}" alt=""></a></div>
         <nav class="sidebar-main">
             <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
             <div id="sidebar-menu">
                 <ul class="sidebar-links" id="simple-bar">
-                    <li class="back-btn"><a href="{{ route('index') }}"><img class="img-fluid"
+                    <li class="back-btn"><a href="{{ route('home') }}"><img class="img-fluid"
                                 src="{{ asset('assets/images/logo/logo-icon.png') }}" alt=""></a>
                         <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
                                 aria-hidden="true"></i></div>
@@ -32,7 +32,7 @@
                                 <use href="{{ asset('assets/svg/icon-sprite.svg#fill-home') }}"></use>
                             </svg><span class="lan-3">Dashboard</span></a>
                         <ul class="sidebar-submenu">
-                            <li><a class="lan-4" href="{{ route('index') }}">Default</a></li>
+                            <li><a class="lan-4" href="{{ route('home') }}">Default</a></li>
                             <li><a class="lan-5" href="{{ route('dashboard-02') }}">Ecommerce</a></li>
                             <li><a href="{{ route('dashboard-03') }}">Online course</a></li>
                             <li><a href="{{ route('dashboard-04') }}">Crypto</a></li>

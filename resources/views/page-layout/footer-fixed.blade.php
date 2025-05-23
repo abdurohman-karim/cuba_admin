@@ -59,7 +59,7 @@
                 </div>
                 <div class="col-6">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('index')}}"><i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="{{route('home')}}"><i data-feather="home"></i></a></li>
                     <li class="breadcrumb-item">Page Layout</li>
                     <li class="breadcrumb-item active">Footer Fixed</li>
                   </ol>

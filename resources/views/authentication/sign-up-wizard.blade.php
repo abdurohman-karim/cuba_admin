@@ -16,7 +16,7 @@
             <div class="theme-form">
                <div class="wizard-4" id="wizard">
                   <ul>
-                     <li><a class="logo text-start ps-0" href="{{ route('index') }}"><img class="img-fluid for-light" src="{{asset('assets/images/logo/login.png')}}" alt="looginpage"><img class="img-fluid for-dark" src="{{asset('assets/images/logo/logo_dark.png')}}" alt="looginpage"></a></li>
+                     <li><a class="logo text-start ps-0" href="{{ route('home') }}"><img class="img-fluid for-light" src="{{asset('assets/images/logo/login.png')}}" alt="looginpage"><img class="img-fluid for-dark" src="{{asset('assets/images/logo/logo_dark.png')}}" alt="looginpage"></a></li>
                      <li>
                         <a href="#step-1">
                            <h4>1</h4>

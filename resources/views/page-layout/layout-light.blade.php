@@ -56,7 +56,7 @@
             </div>
           </form>
           <div class="header-logo-wrapper col-auto p-0">
-            <div class="logo-wrapper"><a href="{{ route('index') }}"><img class="img-fluid" src="{{asset('assets/images/logo/logo.png')}}" alt=""></a></div>
+            <div class="logo-wrapper"><a href="{{ route('home') }}"><img class="img-fluid" src="{{asset('assets/images/logo/logo.png')}}" alt=""></a></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
           </div>
           <div class="left-header col horizontal-wrapper ps-0">
@@ -412,7 +412,7 @@
                       <div class="according-menu"><i class="fa fa-angle-{{request()->route()->getPrefix() == '/dashboard' ? 'down' : 'right' }}"></i></div>
                     </a>
                     <ul class="sidebar-submenu" style="display: {{ request()->route()->getPrefix() == '/dashboard' ? 'block;' : 'none;' }}">
-                      <li><a class="lan-4 {{ Route::currentRouteName()=='index' ? 'active' : '' }}" href="{{route('index')}}">{{ trans('lang.Default') }}</a></li>
+                      <li><a class="lan-4 {{ Route::currentRouteName()=='home' ? 'active' : '' }}" href="{{route('home')}}">{{ trans('lang.Default') }}</a></li>
                                 <li><a class="lan-5 {{ Route::currentRouteName()=='dashboard-02' ? 'active' : '' }}" href="{{route('dashboard-02')}}">{{ trans('lang.Ecommerce') }}</a></li>
                     </ul>
                   </li>
@@ -944,7 +944,7 @@
                 </div>
                 <div class="col-6">
                   <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{route('index')}}">                                       <i data-feather="home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="{{route('home')}}">                                       <i data-feather="home"></i></a></li>
                     <li class="breadcrumb-item">Page Layout</li>
                     <li class="breadcrumb-item active">Layout Light</li>
                   </ol>

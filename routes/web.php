@@ -5,20 +5,12 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Blade\ProfileController;
 
 Route::get('/', function () {
-    return redirect()->route('index');
+    return redirect()->route('home');
 })->name('/');
 
 Auth::routes();
 Route::group(['middleware'=>"auth"],function (){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-    Route::prefix('dashboard')->group(function () {
-        Route::view('index', 'dashboard.index')->name('index');
-        Route::view('dashboard-02', 'dashboard.dashboard-02')->name('dashboard-02');
-        Route::view('dashboard-03', 'dashboard.dashboard-03')->name('dashboard-03');
-        Route::view('dashboard-04', 'dashboard.dashboard-04')->name('dashboard-04');
-        Route::view('dashboard-05', 'dashboard.dashboard-05')->name('dashboard-05');
-    });
 
     Route::resource('users', App\Http\Controllers\Blade\UserController::class);
     Route::resource('roles', App\Http\Controllers\Blade\RoleController::class);
